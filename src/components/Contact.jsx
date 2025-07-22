@@ -35,7 +35,7 @@ export default function Contact() {
     // Set a timeout for the request
     const timeoutId = setTimeout(() => {
       setIsLoading(false)
-      toast.warning('⏰ Request timed out. Please try again or contact me directly at thelakshya31@gmail.com', {
+      toast.warning('Request timed out. Please try again or contact me directly at thelakshya31@gmail.com', {
         position: "top-right",
         autoClose: 8000,
         hideProgressBar: false,
@@ -54,7 +54,7 @@ export default function Contact() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'YOUR_ACCESS_KEY', // Replace with actual key from web3forms.com
+          access_key: `${import.meta.env.VITE_FORM_KEY}`, // Your actual Web3Forms access key
           name: formData.name,
           email: formData.email,
           message: formData.message,
@@ -70,7 +70,7 @@ export default function Contact() {
       if (response.ok) {
         const result = await response.json()
         if (result.success) {
-          toast.success('✅ Message sent successfully! I\'ll get back to you soon.', {
+          toast.success('Message sent successfully!.', {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -84,7 +84,7 @@ export default function Contact() {
             message: ''
           })
         } else {
-          toast.error('❌ Failed to send message. Please try again or contact me directly at thelakshya31@gmail.com', {
+          toast.error('Failed to send message. Please try again or contact me directly at thelakshya31@gmail.com', {
             position: "top-right",
             autoClose: 8000,
             hideProgressBar: false,
@@ -94,7 +94,7 @@ export default function Contact() {
           })
         }
       } else {
-        toast.error('❌ Failed to send message. Please try again or contact me directly at thelakshya31@gmail.com', {
+        toast.error('Failed to send message. Please try again or contact me directly at thelakshya31@gmail.com', {
           position: "top-right",
           autoClose: 8000,
           hideProgressBar: false,
@@ -324,11 +324,6 @@ export default function Contact() {
 
             {/* Contact Form */}
             <motion.div variants={slideInFromRight}>
-              <div className="mb-6">
-              <div className="p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 rounded-xl shadow">
-                ⚠️ This contact form is currently not working. Please reach out directly at <span className="font-semibold">thelakshya31@gmail.com</span>.
-              </div>
-            </div>
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 {/* Form fields with sliding animations */}
                 <motion.div

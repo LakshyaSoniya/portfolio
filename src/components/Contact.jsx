@@ -209,27 +209,7 @@ export default function Contact() {
                   Get in Touch
                 </motion.h3>
                 <div className="space-y-4">
-                  {/*
-                    { icon: Mail, label: "Email", value: "huzaif@example.com" },
-                    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
-                    { icon: MapPin, label: "Location", value: "San Francisco, CA" }
-                  ].map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -50 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-                      transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                      whileHover={{ scale: 1.05, x: 10 }}
-                      className="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md"
-                    >
-                      <item.icon className="w-6 h-6 text-blue-500" />
-                      <div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">{item.label}</div>
-                        <div className="font-medium text-gray-900 dark:text-white">{item.value}</div>
-                      </div>
-                    </motion.div>
-                  ))}
-                  */}
+                 
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     className="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md"
